@@ -1,11 +1,14 @@
 //const express = require('express')
 //const cors = require('cors');
+//moze import zbog babel i index postavki
 import 'dotenv/config';
 import express from 'express';
-import cors from 'cors'; //moze import zbog babel i index postavki
+import cors from 'cors'; 
 import testRouter from './routers/testRouter';
 import categoryRouter from './routers/categoryRouter';
 import mongoose from 'mongoose';
+import subCategoryRouter from './routers/subCategoryRouter';
+import itemRouter from './routers/itemRouter';
 
 const server = express();
 
@@ -13,12 +16,13 @@ const PORT = 8000;
 
 const init = () => { 
     server.use(express.json());
-    server.use(cors());
+    server.use(cors()); // sigurnost
     server.use('/test', testRouter);
     server.use('/category', categoryRouter);
+    server.use('/subCategory', subCategoryRouter);
+    server.use('/item', itemRouter);
     server.listen(PORT, () => {
         console.log(`Listening on port ${PORT}`)
-        //console.log('Listening on port 8000')
     })
 };
 
