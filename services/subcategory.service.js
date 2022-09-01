@@ -23,6 +23,7 @@ const getSubCategoriesByCategory = async(id) => {
     })
 };
 
+//samo daje error ne ispise poruku
 const createOneSubCategory = async(data) => {
     const id = await validateCategory(data.categoryId);
     return await SubCategory.create({

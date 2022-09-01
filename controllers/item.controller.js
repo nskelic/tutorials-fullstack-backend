@@ -7,7 +7,7 @@ const getOneItem = async(req, res) => {
         return res.send(Item)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const getAllItems = async(req, res) => {
@@ -16,7 +16,7 @@ const getAllItems = async(req, res) => {
         return res.send(Items)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const getItemsByCategory = async(req, res) => {
@@ -26,7 +26,7 @@ const getItemsByCategory = async(req, res) => {
         return res.send(Items)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const getItemsBySubCategory = async(req, res) => {
@@ -36,17 +36,16 @@ const getItemsBySubCategory = async(req, res) => {
         return res.send(Items)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const createOneItem = async(req, res) => {
     try {
         const {body} = req;
-        //validacija ovdje ili u servisu
         const Item = await ItemServiceHandler.createOneItem(body);
         return res.send(Item)
     } catch (error) {
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const deleteOneItem = async(req, res) => {
@@ -56,7 +55,7 @@ const deleteOneItem = async(req, res) => {
         return res.send(deletedItem)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const updateOneItem = async(req, res) => {
@@ -66,7 +65,7 @@ const updateOneItem = async(req, res) => {
         return res.send(Item)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 

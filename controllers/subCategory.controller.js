@@ -7,7 +7,7 @@ const getOneSubCategory = async(req, res) => {
         return res.send(subCategory)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const getAllSubCategories = async(req, res) => {
@@ -16,7 +16,7 @@ const getAllSubCategories = async(req, res) => {
         return res.send(subCategories)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const getSubCategoriesByCategory = async(req, res) => {
@@ -26,7 +26,7 @@ const getSubCategoriesByCategory = async(req, res) => {
         return res.send(subCategories)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const createOneSubCategory = async(req, res) => {
@@ -36,7 +36,7 @@ const createOneSubCategory = async(req, res) => {
         const subCategory = await SubCategoryServiceHandler.createOneSubCategory(body);
         return res.send(subCategory)
     } catch (error) {
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const deleteOneSubCategory = async(req, res) => {
@@ -46,7 +46,7 @@ const deleteOneSubCategory = async(req, res) => {
         return res.send(deletedSubCategory)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 const updateOneSubCategory = async(req, res) => {
@@ -56,7 +56,7 @@ const updateOneSubCategory = async(req, res) => {
         return res.send(subCategory)
     } catch (error) {
         console.log(error);
-        return res.send({msg: "Internal server error"}).status(500);
+        return res.send(error.message).status(500);
     }
 };
 

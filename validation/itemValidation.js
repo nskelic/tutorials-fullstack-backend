@@ -11,9 +11,9 @@ async function validateSubCategory (subCategoryId) {
 }
 
 async function validateItemName (name) {
-    if(name === '') throw new Error(`Name of the item can not be ${data.name}`);
-    const item = await Item.findOne({name});
-    if(item) throw new Error(`Name ${data.name} already exists`);
+    if(name === '') throw new Error(`Name of the item can not be ${name}`);
+    const item = await Item.findOne({name,});
+    if(item) throw new Error(`Name ${name} already exists`);
     return;
 }
 
